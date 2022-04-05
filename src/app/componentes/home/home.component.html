@@ -1,0 +1,28 @@
+
+<h1>{{ titulo }}</h1><!--bindea a la variable titulo del home.component.ts-->
+
+<input type="button" [value]="btn" (click)="enviar($event)"/>
+<!--para bindear a la variable btn en un boton hay que ponerle corchetes a value-->
+<!--el onclick en angular es (click). Se llama a la funcion enviar-->
+
+<input type="text" [(ngModel)]="nombre" />
+{{nombre}}
+<!--bindea a la variable nombre que en este caso va a cambiar con el cuadro de texto-->
+
+<div *ngIf="nombre">
+  <!-- ngIf es una directiva que hace un if. En este caso pregunta si esta instanciada la variable nombre. Se pone * para resumir la directiva (ngIf tiene un nombre mas largo)-->
+  <!-- las directivas en Angular 6 no son las directivas de AngularJS-->
+    <h1>hola</h1>
+</div>
+
+<ul><!-- ul crea una lista-->
+  
+  <!--<li *ngFor="let i of [1,2,3,4,5]"> ngFor es un for. let i hace que el i recorra el array-->
+      
+    <li *ngFor="let i of lista">
+    <!--recorre la variable lista de home.component.ts-->
+
+  {{i.nombre}} - {{i.edad}}
+
+</li>
+</ul>
